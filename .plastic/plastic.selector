@@ -1,4 +1,0 @@
-repository "SpaceShooter 2026-01-18_22-43-50/SpaceShooter@18968365680316@cloud"
-  path "/"
-    br "/main"
-    co "/main"
