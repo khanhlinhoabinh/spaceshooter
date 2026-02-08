@@ -12,6 +12,7 @@
 # =========================
 # Visual Studio / Rider / VSCode
 # =========================
+.vsconfig
 .vs/
 .vscode/
 .idea/
