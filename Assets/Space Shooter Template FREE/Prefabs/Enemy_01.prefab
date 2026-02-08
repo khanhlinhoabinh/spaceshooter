@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8322913948374358439}
   - component: {fileID: 4235405249987484467}
   - component: {fileID: 707367835218035120}
+  - component: {fileID: -342481105450993054}
+  - component: {fileID: -8620640166463094232}
   m_Layer: 0
   m_Name: Enemy_01
   m_TagString: Untagged
@@ -123,7 +125,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -166,3 +168,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-342481105450993054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681231509001564653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48d4a63767cf4e4a895f918687b3b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  health: {fileID: -8620640166463094232}
+  damage: 1
+--- !u!114 &-8620640166463094232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681231509001564653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7df872abafa344796c4d57ea0d5120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  explosionPrefab: {fileID: 44732530893755037, guid: 87f099b8609d1d749956240554db5863,
+    type: 3}
+  defaultHealthPoint: 3

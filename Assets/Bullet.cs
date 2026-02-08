@@ -2,12 +2,23 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float flySpeed;
+    public float flySpeed = 10f;
+    public int damage = 1;
 
     void Update()
     {
-        var newPosition = transform.position;
-        newPosition.y += Time.deltaTime * flySpeed;
-        transform.position = newPosition;
+        transform.Translate(Vector3.up * flySpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
     }
 }
