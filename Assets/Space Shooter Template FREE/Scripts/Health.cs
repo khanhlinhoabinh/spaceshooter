@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     public int defaultHealthPoint = 3;
 
     int healthPoint;
+    bool isDead = false;
 
     void Start()
     {
@@ -14,12 +15,15 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (healthPoint <= 0) return;
+        if (isDead) return;
 
         healthPoint -= damage;
 
         if (healthPoint <= 0)
+        {
+            isDead = true;
             Die();
+        }
     }
 
     protected virtual void Die()
@@ -27,5 +31,4 @@ public class Health : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
-
 }

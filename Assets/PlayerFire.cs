@@ -4,8 +4,12 @@ public class PlayerFire : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public float shootingInterval = 0.2f;
-
+    AudioSource shootSound;
     private float lastBulletTime;
+    void Start()
+    {
+        shootSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -26,5 +30,6 @@ public class PlayerFire : MonoBehaviour
             transform.position,
             transform.rotation
         );
+        shootSound.Play();
     }
 }
