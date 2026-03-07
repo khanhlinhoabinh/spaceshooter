@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 9044288928114929929}
   - component: {fileID: -1341320691575104164}
   - component: {fileID: 4776828630621600780}
-  - component: {fileID: -8845185600075194692}
+  - component: {fileID: -4958030971967478979}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -569,7 +569,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-8845185600075194692
+--- !u!114 &-4958030971967478979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   explosionPrefab: {fileID: 0}
+  defaultHealthPoint: 3
 --- !u!1 &8011440469859617813
 GameObject:
   m_ObjectHideFlags: 0
