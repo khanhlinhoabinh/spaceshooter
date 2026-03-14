@@ -3,32 +3,42 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public GameObject explosionPrefab;
+
     public int defaultHealthPoint = 3;
 
-    int healthPoint;
-    bool isDead = false;
+    public System.Action onDead;
+    public System.Action onHealthChanged;
 
-    void Start()
+    public int healthPoint;
+
+    private void Start()
     {
         healthPoint = defaultHealthPoint;
+        onHealthChanged?.Invoke();
     }
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (healthPoint <= 0) return;
 
         healthPoint -= damage;
 
+        onHealthChanged?.Invoke();
+
         if (healthPoint <= 0)
         {
-            isDead = true;
             Die();
         }
     }
 
     protected virtual void Die()
     {
-        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        var explosion = Instantiate(explosionPrefab, transform.position, transform.rotation);
+
+        Destroy(explosion, 1);
+
         Destroy(gameObject);
+
+        onDead?.Invoke();
     }
 }
