@@ -6,6 +6,6 @@ public class Waypoint : MonoBehaviour
     {
         Gizmos.color = Color.green;
 
-        Gizmos.DrawSphere(transform.position, 0.1f);
+        Gizmos.DrawSphere(transform.position, 3f);
     }
 }
